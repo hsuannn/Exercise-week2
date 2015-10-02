@@ -1,6 +1,6 @@
 /*draw a disgusting smiling face */
-/*waiting for a better method that x will not <0*/
-int x=55;
+
+int x=55,y;
 
 void setup()
 {
@@ -20,9 +20,14 @@ void draw()
   arc(250, 350, 80, 80, 0, PI);
   
   /*eyes*/
+  strokeWeight(1);
   fill(0);
   x--;
-  ellipse(170,200,x,x);
-  ellipse(330,200,x,x);
+  if(x<0)
+  y = x*(-1);
+  else
+  y = x;
+  ellipse(150,200,y,y);
+  ellipse(350,200,y,y);
   
 }
